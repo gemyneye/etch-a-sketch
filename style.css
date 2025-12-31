@@ -1,0 +1,21 @@
+*, #grid-squares {
+    box-sizing: border-box;
+}
+
+.square {
+    background: red;
+    width: var(--square-size);
+    height: var(--square-size);
+    border: solid grey 1px;
+}
+
+#grid-squares {
+    display: flex;
+    flex-wrap: wrap;
+    width: 512px;
+    height: 512px;
+}
+
+.square:hover {
+    background-color: black;
+}
