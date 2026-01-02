@@ -10,7 +10,7 @@
     background: red;
     width: var(--square-size);
     height: var(--square-size);
-    border: solid grey 1px;
+    /* border: solid grey 1px; */
 }
 
 #grid-squares {
