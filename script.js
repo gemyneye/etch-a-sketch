@@ -3,6 +3,7 @@ const selectedGridSize = document.querySelector(".grid-number");
 const buttonSelected = document.querySelector(".grid-enter");
 const buttonClear = document.querySelector(".clear-screen");
 console.log(selectedGridSize.value);
+
 buttonSelected.addEventListener('click', () => {
     const inputGridSize = parseInt(selectedGridSize.value);
     if (inputGridSize <1 || inputGridSize > 100) { alert("Please enter a number greater than 1 and less than 101");return;}
@@ -14,7 +15,13 @@ buttonSelected.addEventListener('click', () => {
     createGrid(inputGridSize);
 }
 );
-    
+
+buttonClear.addEventListener('click', () => { 
+    const pixelBoxClear = sketchBox.getElementsByClassName("drawn"); while(pixelBoxClear.length > 0){ 
+        pixelBoxClear[0].classList.remove("drawn"); 
+    } 
+} 
+);
 
 function createGrid(size){
     
