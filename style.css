@@ -1,4 +1,4 @@
-*, #grid-squares {
+* {
     box-sizing: border-box;
 }
 
@@ -16,6 +16,10 @@
     height: 512px;
 }
 
-.square:hover {
+/* .square:hover {
     background-color: black;
+} */
+
+.square.drawn {
+    background-color: blue;
 }
