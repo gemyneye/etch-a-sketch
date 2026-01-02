@@ -13,14 +13,7 @@ buttonSelected.addEventListener('click', () => {
     console.log(inputGridSize);
     createGrid(inputGridSize);
 }
-)
-
-buttonClear.addEventListener('click'), () => {
-    const pixelBoxClear = document.getElementsByClassName("drawn");
-    while(pixelBoxClear.classList.contains("drawn")){
-        pixelBoxClear.classList.remove("drawn");
-    }
-}    
+);
     
 
 function createGrid(size){
