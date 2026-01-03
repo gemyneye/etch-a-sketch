@@ -7,17 +7,18 @@
     
 }
 .square {
-    background: rgb(245, 245, 245);
     width: var(--square-size);
     height: var(--square-size);
     /* border: solid grey 1px; */
 }
 
 #grid-squares {
+    border: dashed black 5px;
     display: flex;
     flex-wrap: wrap;
     width: 512px;
     height: 512px;
+    background-color: rgb(250, 250, 255);
 }
 
 /* .square:hover {
@@ -25,7 +26,7 @@
 } */
 
 .square.drawn {
-    background-color: blue;
+    background-color: var(--ink);
 }
 
 .controls {

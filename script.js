@@ -8,6 +8,7 @@ function randomColor() {
     const b = Math.floor(Math.random() * 256);
     return `rgb(${r}, ${g}, ${b})`;
 }
+
 console.log(selectedGridSize.value);
 console.log(randomColor());
 
@@ -43,5 +44,7 @@ function createGrid(size){
 
 sketchBox.addEventListener('mouseover', (event) => {
     if(!event.target.classList.contains("square")) return;
+    if(event.target.classList.contains("drawn")) return;
+    event.target.style.setProperty("--ink", randomColor());
     event.target.classList.add("drawn");
 })
