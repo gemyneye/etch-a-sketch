@@ -2,7 +2,14 @@ const sketchBox = document.querySelector("#grid-squares");
 const selectedGridSize = document.querySelector(".grid-number");
 const buttonSelected = document.querySelector(".grid-enter");
 const buttonClear = document.querySelector(".clear-screen");
+function randomColor() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return `rgb(${r}, ${g}, ${b})`;
+}
 console.log(selectedGridSize.value);
+console.log(randomColor());
 
 buttonSelected.addEventListener('click', () => {
     const inputGridSize = parseInt(selectedGridSize.value);

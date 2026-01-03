@@ -7,7 +7,7 @@
     
 }
 .square {
-    background: red;
+    background: rgb(245, 245, 245);
     width: var(--square-size);
     height: var(--square-size);
     /* border: solid grey 1px; */
