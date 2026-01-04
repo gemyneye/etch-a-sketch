@@ -3,11 +3,23 @@ const selectedGridSize = document.querySelector(".grid-number");
 const styleSelector = document.querySelector(".canvas");
 let canvasMode = '';
 
+const gridClear = () => { 
+    const pixelBoxClear = sketchBox.getElementsByClassName("drawn");
+    
+    while(pixelBoxClear.length > 0){ 
+        pixelBoxClear[0].style.setProperty("--alpha", "0");
+        pixelBoxClear[0].classList.remove("drawn"); 
+    } 
+} 
+
 //select the canvas drawing mode
 
-styleSelector.addEventListener('click', (e) => {
-    console.log(e.value);
-})
+styleSelector.addEventListener('change', (event) => {
+    if(event.target.type !== "radio") return;
+    canvasMode = event.target.value;
+    console.log(canvasMode);
+    gridClear();
+});
 
 const buttonSelected = document.querySelector(".grid-enter");
 const buttonClear = document.querySelector(".clear-screen");
@@ -34,13 +46,7 @@ buttonSelected.addEventListener('click', () => {
 }
 );
 
-buttonClear.addEventListener('click', () => { 
-    const pixelBoxClear = sketchBox.getElementsByClassName("drawn"); 
-    while(pixelBoxClear.length > 0){ 
-        pixelBoxClear[0].classList.remove("drawn"); 
-    } 
-} 
-);
+buttonClear.addEventListener('click', gridClear);
 
 function createGrid(size){
     
