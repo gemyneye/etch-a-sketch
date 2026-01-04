@@ -17,17 +17,15 @@ const gridClear = () => {
 styleSelector.addEventListener('change', (event) => {
     if(event.target.type !== "radio") return;
     canvasMode = event.target.value;
-    console.log(canvasMode);
     gridClear();
 });
 
 const buttonSelected = document.querySelector(".grid-enter");
 const buttonClear = document.querySelector(".clear-screen");
+
 function randomColor() {
     const r = Math.floor(Math.random() * 256);
-    // const g = Math.floor(Math.random() * 256);
-    // const b = Math.floor(Math.random() * 256);
-    return `${r}`;
+    return r;
 }
 
 console.log(selectedGridSize.value);
