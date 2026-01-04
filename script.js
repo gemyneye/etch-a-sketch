@@ -58,7 +58,7 @@ function createGrid(size){
 }
 }
 
-sketchBox.addEventListener('mouseover', (event) => {
+sketchBox.addEventListener('pointermove', (event) => {
     if(!event.target.classList.contains("square")) return;
     if(canvasMode === "basic") {
         if(event.target.classList.contains("drawn")) return;
