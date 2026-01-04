@@ -22,3 +22,7 @@ me more jargon and reading MDN. This was an entry in to custom CSS properties an
 variables, in addition to computing them using JS. I learned more on event 
 delegation and bubbling and how to utilize it. This is such a challenge but so 
 awesome!
+** - update -
+Although it wasn't part of the assignment, I wanted to add additional 
+functionality of a selection between the modes. This also gave me more experience
+and learning with listeners and conditional rendering. 
