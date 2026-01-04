@@ -3,7 +3,9 @@
 }
 
 .game-title {
-    margin: 20px 10px 20px 20px;
+    width: 512px;
+    padding-left: 60px;
+    margin: 20px;
     
 }
 .square {

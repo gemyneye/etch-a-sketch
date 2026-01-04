@@ -1,5 +1,14 @@
 const sketchBox = document.querySelector("#grid-squares");
 const selectedGridSize = document.querySelector(".grid-number");
+const styleSelector = document.querySelector(".canvas");
+let canvasMode = '';
+
+//select the canvas drawing mode
+
+styleSelector.addEventListener('click', (e) => {
+    console.log(e.value);
+})
+
 const buttonSelected = document.querySelector(".grid-enter");
 const buttonClear = document.querySelector(".clear-screen");
 function randomColor() {
