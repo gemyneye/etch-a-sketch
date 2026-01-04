@@ -1,7 +1,7 @@
 const sketchBox = document.querySelector("#grid-squares");
 const selectedGridSize = document.querySelector(".grid-number");
 const styleSelector = document.querySelector(".canvas");
-let canvasMode = '';
+let canvasMode = document.querySelector('input[name="pen-style"]:checked').value;
 
 const gridClear = () => { 
     const pixelBoxClear = sketchBox.getElementsByClassName("drawn");
@@ -25,9 +25,9 @@ const buttonSelected = document.querySelector(".grid-enter");
 const buttonClear = document.querySelector(".clear-screen");
 function randomColor() {
     const r = Math.floor(Math.random() * 256);
-    const g = Math.floor(Math.random() * 256);
-    const b = Math.floor(Math.random() * 256);
-    return `rgb(${r}, ${g}, ${b})`;
+    // const g = Math.floor(Math.random() * 256);
+    // const b = Math.floor(Math.random() * 256);
+    return `${r}`;
 }
 
 console.log(selectedGridSize.value);
@@ -62,17 +62,37 @@ function createGrid(size){
 
 sketchBox.addEventListener('mouseover', (event) => {
     if(!event.target.classList.contains("square")) return;
-    // if(event.target.classList.contains("drawn")) return;
-    // event.target.style.setProperty("--ink", randomColor());
-    let drawnSquare = parseFloat(window.getComputedStyle(event.target).getPropertyValue("--alpha"));
-    console.log(drawnSquare);
-    if(drawnSquare < 1) {
-        drawnSquare += .1;
-        console.log(drawnSquare);
-        event.target.style.setProperty("--alpha", drawnSquare);
-    } else {
+    if(canvasMode === "basic") {
+        if(event.target.classList.contains("drawn")) return;
+        event.target.style.setProperty("--ink-r", "0");
+        event.target.style.setProperty("--ink-g", "0");
+        event.target.style.setProperty("--ink-b", "0");
+        event.target.style.setProperty("--alpha", "1");
+        event.target.classList.add("drawn");
+    }
+    else if(canvasMode === "random"){
+    //Random color drawing
+        if(event.target.classList.contains("drawn")) return;
+        event.target.style.setProperty("--ink-r", randomColor());
+        event.target.style.setProperty("--ink-g", randomColor());
+        event.target.style.setProperty("--ink-b", randomColor());
+        event.target.style.setProperty("--alpha", "1");
+        event.target.classList.add("drawn");
+    }
+    // Shading drawing
+    
+    else if(canvasMode === "shade") {
+        let drawnSquare = parseFloat(window.getComputedStyle(event.target).getPropertyValue("--alpha"));
+        if(drawnSquare < 1) {
+            drawnSquare += .1;
+            event.target.style.setProperty("--ink-r", "0");
+            event.target.style.setProperty("--ink-g", "0");
+            event.target.style.setProperty("--ink-b", "0");
+            event.target.style.setProperty("--alpha", drawnSquare);
+            event.target.classList.add("drawn");
+        }
+    }
+    else {
         return;
     }
-    console.log(drawnSquare);
-    event.target.classList.add("drawn");
-})
+});

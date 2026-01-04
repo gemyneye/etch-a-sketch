@@ -25,8 +25,11 @@
 }
 
 .square.drawn {
-    background-color: rgba(0, 0, 255, var(--alpha));
-    /* background-color: var(--ink); */
+    background-color: rgba(
+        var(--ink-r), 
+        var(--ink-g), 
+        var(--ink-b), 
+        var(--alpha));
 }
 
 .controls {
