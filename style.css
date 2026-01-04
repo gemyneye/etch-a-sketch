@@ -15,6 +15,7 @@
 }
 
 #grid-squares {
+    touch-action: none;
     border: dashed black 0px;
     display: flex;
     flex-wrap: wrap;
