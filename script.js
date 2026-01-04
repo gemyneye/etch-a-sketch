@@ -9,14 +9,6 @@ function randomColor() {
     return `rgb(${r}, ${g}, ${b})`;
 }
 
-// function increaseOpacity(){
-//     while (i <= 100) {
-//         console.log(`rgba(0, 0, 255, ${i})`);
-//         return `rgba(0, 0, 255, ${i})`;
-//         i += 10;
-//     }
-// }
-
 console.log(selectedGridSize.value);
 console.log(randomColor());
 
