@@ -21,10 +21,6 @@
     background-color: rgb(250, 250, 255);
 }
 
-/* .square:hover {
-    background-color: black;
-} */
-
 .square.drawn {
     background-color: rgba(0, 0, 255, var(--alpha));
     /* background-color: var(--ink); */
