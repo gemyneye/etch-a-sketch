@@ -13,7 +13,7 @@
 }
 
 #grid-squares {
-    border: dashed black 5px;
+    border: dashed black 0px;
     display: flex;
     flex-wrap: wrap;
     width: 512px;
@@ -26,7 +26,8 @@
 } */
 
 .square.drawn {
-    background-color: var(--ink);
+    background-color: rgba(0, 0, 255, var(--alpha));
+    /* background-color: var(--ink); */
 }
 
 .controls {
